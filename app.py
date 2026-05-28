@@ -11,7 +11,7 @@ for col in df.columns:
     if df[col].isnull().sum()>0:
         if df[col].dtype == 'object':
             df[col] = df[col].fillna(df[col].mode()[0])
-        else:
+        elif df[col].dtypye=='float':
             df[col] = df[col].fillna(df[col].mean())
 
 st.set_page_config(page_title="Sara Enterprises" , layout='wide')
